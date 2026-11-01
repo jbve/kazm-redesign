@@ -29,6 +29,13 @@ html{scroll-behavior:smooth}
  .hoofdmenu a{padding:14px 4px !important;border-bottom:1px solid #ECEEEA}
  .hoofdmenu a:last-child{border-bottom:0;margin-top:12px;text-align:center;padding:14px 18px !important}
 }
+@media (max-width:480px){
+ #leden > div{gap:0 10px !important;padding:0 14px !important;justify-content:space-between !important;font-size:13px}
+ #leden .leden-label{display:none}
+}
+@media (max-width:340px){
+ #leden > div{font-size:12px}
+}
 </style>
 </head>
 <body>
@@ -37,9 +44,10 @@ html{scroll-behavior:smooth}
 
 <div id="leden" style="background: #1B1F4B; color: #C3C8E0; font-size: 14px">
 <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 0 20px">
-<span>Leden:</span>
+<span class="leden-label">Leden:</span>
 <a href="https://esoar.kazm.be/login" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 12px 0">eSoar<svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
 <a href="https://kazm.gliding.app/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 12px 0">Gliding.App<svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a href="https://jbve.github.io/meeuwweer/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 12px 0">Weerbriefing<svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
 </div>
 </div>
 <header style="background: #F5F6F3; border-bottom: 1px solid #D9DDD6">
@@ -83,7 +91,7 @@ html{scroll-behavior:smooth}
 </section>
 
 <section aria-label="Kerncijfers" style="background: #1B1F4B; color: #F5F6F3">
-<div style="max-width: 1240px; margin: 0 auto; padding: 36px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 36px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 28px">
 <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 44px">14+</span><span style="font-size: 15px; color: #C3CCD3">Leren vliegen kan vanaf 14 jaar</span></div>
 <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 44px">±120</span><span style="font-size: 15px; color: #C3CCD3">leden van alle leeftijden</span></div>
 <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 44px">10</span><span style="font-size: 15px; color: #C3CCD3">zweefvliegtuigen + eigen sleepvliegtuig</span></div>
@@ -93,7 +101,7 @@ html{scroll-behavior:smooth}
 
 <section id="start" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 40px">
 <h2 style="margin: 0 0 32px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 48px; text-transform: uppercase">Hoe begin je?</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px">
 <article id="leren" style="background: #1B1F4B; color: #F5F6F3; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #C3CCD3">Lid worden</span>
 <h3 style="margin: 0; font-size: 24px">Leer zweefvliegen bij KAZM</h3>
@@ -174,7 +182,7 @@ html{scroll-behavior:smooth}
 </div>
 </div>
 </section>
-<section aria-label="Foto's" style="max-width:1240px;margin:0 auto;padding:0 24px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+<section aria-label="Foto's" style="max-width:1240px;margin:0 auto;padding:0 24px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px">
 <img src="img/vlag-meeuw.jpg" alt="Clubvlag van de Koninklijke Antwerpse Zweefclub Meeuw" loading="lazy" style="display:block;width:100%;aspect-ratio:3 / 2;object-fit:cover;border-radius:10px;background:#C9D3D8">
 <img src="img/in-vlucht.jpg" alt="Twee zweefvliegtuigen samen in de lucht, hoog boven het landschap" loading="lazy" style="display:block;width:100%;aspect-ratio:3 / 2;object-fit:cover;border-radius:10px;background:#C9D3D8">
 </section>
@@ -248,6 +256,7 @@ html{scroll-behavior:smooth}
 <a href="#geschiedenis" style="color: #F5F6F3; text-decoration: none; padding: 8px 0">Geschiedenis</a>
 <a href="https://esoar.kazm.be/login" target="_blank" rel="noopener" style="color: #F5F6F3; text-decoration: none; padding: 8px 0">eSoar</a>
 <a href="https://kazm.gliding.app/" target="_blank" rel="noopener" style="color: #F5F6F3; text-decoration: none; padding: 8px 0">Gliding.App</a>
+<a href="https://jbve.github.io/meeuwweer/" target="_blank" rel="noopener" style="color: #F5F6F3; text-decoration: none; padding: 8px 0">Weerbriefing</a>
 <a href="#privacy" style="color: #F5F6F3; text-decoration: none; padding: 8px 0">Privacy</a>
 <a href="#contact" style="color: #F5F6F3; text-decoration: none; padding: 8px 0">Contact</a>
 </nav>
