@@ -26,8 +26,8 @@ window.KAZM = {
 
   // ---- Zweefkamp ------------------------------------------------------
   kamp: {
-    week1:          "maandag 12 t.e.m. vrijdag 16 juli 2027",
-    week2:          "maandag 19 t.e.m. vrijdag 23 juli 2027",
+    week1:          "12 t.e.m. 16 juli 2027",   // verschijnt ook in de kalender
+    week2:          "19 t.e.m. 23 juli 2027",   // verschijnt ook in de kalender
     inschrijvingen: "Inschrijvingen starten in 2027."
   },
 
@@ -49,12 +49,14 @@ window.KAZM = {
   // ---- Vliegkalender --------------------------------------------------
   // Eén regel per activiteit. Kopieer een regel om er een toe te voegen,
   // verwijder een regel om ze weg te halen.
+  // { kampweek: 1 } en { kampweek: 2 } nemen automatisch de kampdata over
+  // van hierboven (bij "Zweefkamp"): die hoef je hier dus niet te herhalen.
   kalender: [
     { wanneer: "Najaar en winter 2026–2027", activiteit: "Theoriecursus voor leerling-piloten" },
     { wanneer: "Winter 2026–2027",           activiteit: "Winterwerk" },
     { wanneer: "Eind winter 2027",           activiteit: "Bouw van de nieuwe hangar" },
-    { wanneer: "12 t.e.m. 16 juli 2027",     activiteit: "Zweefkamp – week 1" },
-    { wanneer: "19 t.e.m. 23 juli 2027",     activiteit: "Zweefkamp – week 2" },
+    { kampweek: 1 },
+    { kampweek: 2 },
   ]
 
 };

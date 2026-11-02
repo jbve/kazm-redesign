@@ -239,7 +239,7 @@ html{scroll-behavior:smooth}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 28px">
 <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 16px; border-top: 3px solid #2B3080">
 <h3 style="margin: 0; font-size: 19px">Wanneer</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #33424F">Week 1: <span data-veld="kamp.week1">maandag 12 t.e.m. vrijdag 16 juli 2027</span>. Week 2: <span data-veld="kamp.week2">maandag 19 t.e.m. vrijdag 23 juli 2027</span>. In het weekend loopt de gewone clubwerking door.</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #33424F">Week 1: <span data-veld="kamp.week1">12 t.e.m. 16 juli 2027</span>. Week 2: <span data-veld="kamp.week2">19 t.e.m. 23 juli 2027</span>. In het weekend loopt de gewone clubwerking door.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 16px; border-top: 3px solid #2B3080">
 <h3 style="margin: 0; font-size: 19px">Voor wie</h3>
@@ -430,7 +430,7 @@ document.querySelectorAll('[data-veld]').forEach(function(el){
  else el.textContent=v;
 });
 var tb=document.querySelector('[data-lijst="kalender"]');
-if(tb&&Array.isArray(G.kalender)&&G.kalender.length){tb.textContent='';G.kalender.forEach(function(r,i){var tr=document.createElement('tr');[r.wanneer,r.activiteit].forEach(function(t,j){var td=document.createElement('td');td.textContent=t==null?'':t;td.style.padding='16px 20px';if(i<G.kalender.length-1)td.style.borderBottom='1px solid #ECEEEA';if(j===0)td.style.width='42%';tr.appendChild(td);});tb.appendChild(tr);});}
+if(tb&&Array.isArray(G.kalender)&&G.kalender.length){tb.textContent='';G.kalender.forEach(function(r,i){var tr=document.createElement('tr');if(r&&r.kampweek){r={wanneer:get('kamp.week'+r.kampweek),activiteit:'Zweefkamp – week '+r.kampweek};}[r.wanneer,r.activiteit].forEach(function(t,j){var td=document.createElement('td');td.textContent=t==null?'':t;td.style.padding='16px 20px';if(i<G.kalender.length-1)td.style.borderBottom='1px solid #ECEEEA';if(j===0)td.style.width='42%';tr.appendChild(td);});tb.appendChild(tr);});}
 var f=document.getElementById('infoform'); if(f){
  var d=(G.formulier||'').trim();
  if(/^https:\/\//.test(d)) f.action=d;
