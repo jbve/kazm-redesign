@@ -383,12 +383,14 @@ html{scroll-behavior:smooth}
 <p id="bedankt" hidden style="margin: 0; padding: 14px 16px; background: #E6F2E8; color: #1E4D2B; border-radius: 6px; font-size: 15px; font-weight: 500">Bedankt! Je vraag is verstuurd. We nemen zo snel mogelijk contact op.</p>
 <input type="hidden" name="_subject" value="Infovraag via KAZM-website">
 <input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_next" value="https://jbve.github.io/kazm-redesign/?verzonden=1#contact">
 <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
 <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Ik heb interesse in<select name="Interesse" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A9B3BB; border-radius: 6px; background: #FFFFFF"><option>Lid worden en leren vliegen</option><option>Lid worden (al brevet)</option><option>Zweefkamp</option><option>Initiatievlucht</option></select></label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Naam<input name="Naam" required autocomplete="name" type="text" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A9B3BB; border-radius: 6px"></label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">E-mail<input name="email" required autocomplete="email" type="email" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A9B3BB; border-radius: 6px"></label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Opmerking<textarea name="Opmerking" rows="3" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A9B3BB; border-radius: 6px"></textarea></label>
+<p id="te-snel" role="alert" hidden style="margin: 0; padding: 12px 14px; background: #FFF4D6; color: #5A4300; border-radius: 6px; font-size: 14px">Dat ging wel erg snel. Kijk je gegevens even na en klik dan opnieuw op versturen.</p>
 <p style="margin: 0; font-size: 13px; color: #4A5966">We gebruiken je gegevens alleen om je vraag te beantwoorden.</p>
 <button type="submit" style="font: inherit; font-weight: 600; background: #2B3080; color: #FFFFFF; border: 0; border-radius: 6px; padding: 14px; cursor: pointer">Verstuur aanvraag</button>
 </form>
@@ -415,5 +417,6 @@ html{scroll-behavior:smooth}
 <script>(function(){var b=document.querySelector('.menu-toggle'),n=document.getElementById('hoofdmenu');function s(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menu sluiten':'Menu openen');}b.addEventListener('click',function(){s(!n.classList.contains('open'))});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){s(false)})});})();</script>
 <script>(function(){var f=document.getElementById('infoform');if(f){var u=['janbart','vanerck'].join('');f.action='https://formsubmit.co/'+u+'@'+['gmail','com'].join('.');}})();</script>
 <script>if(location.search.indexOf('verzonden=1')>-1){var t=document.getElementById('bedankt');if(t)t.hidden=false;}</script>
+<script>(function(){var f=document.getElementById('infoform');if(!f)return;var t0=Date.now();f.addEventListener('submit',function(e){if(Date.now()-t0<3000){e.preventDefault();var m=document.getElementById('te-snel');if(m)m.hidden=false;t0=Date.now()-2000;}});})();</script>
 </body>
 </html>
